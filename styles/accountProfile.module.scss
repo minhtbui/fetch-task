@@ -1,0 +1,210 @@
+.accountProfileContainer {
+    display: grid;
+    justify-content: space-between;
+    grid-template:
+        'avatar account' 1fr
+        'communication account' 1fr / 0.9fr 1fr;
+    column-gap: 30px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.accountAvatar {
+    grid-area: avatar;
+    text-align: center;
+    background: #1f2744;
+    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+    padding: 18px 0 42px;
+    margin-top: 25px;
+    h2 {
+        font-weight: 600;
+        font-size: 26px;
+        margin: 23px 0 9px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+}
+
+.communicationDetail {
+    grid-area: communication;
+    height: fit-content;
+    background: #172038;
+    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.13);
+
+    border-radius: 5px;
+    padding: 12px 25px 20px;
+    margin-top: 23px;
+    h3 {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+        font-size: 18px;
+        color: rgba(159, 216, 255, 0.36);
+        margin-bottom: 15px;
+
+        input,
+        select {
+            color: #9fd8ff;
+            margin-top: 5px;
+        }
+    }
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 54px;
+    background: rgba(159, 216, 255, 0.24);
+
+    border-radius: 5px;
+    padding: 0 12px;
+    margin-bottom: 7px;
+    &:nth-of-type(2n + 2) {
+        background: transparent;
+    }
+    label {
+        display: flex;
+        max-width: 206px;
+        width: 100%;
+        &::after {
+            content: ':';
+            margin-left: auto;
+            margin-right: 30px;
+        }
+    }
+    img {
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+    }
+    input,
+    select {
+        background-color: transparent;
+    }
+    span {
+        cursor: pointer;
+        color: #a1d6fa;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+    }
+}
+
+.accountDetail {
+    grid-area: account;
+
+    h3 {
+        font-weight: bold;
+        font-size: 18px;
+        color: #6389af;
+        margin-bottom: 12px;
+    }
+    label {
+    }
+}
+
+.homeAddress {
+    grid-area: span 1 / span 2;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    background: #172038;
+
+    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+    padding: 12px 25px 20px;
+    margin-top: 26px;
+
+    .wrapLeft {
+        flex: 0.9;
+        width: 100%;
+    }
+    .wrapRight {
+        flex: 1;
+        width: 100%;
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+        font-size: 18px;
+        color: rgba(159, 216, 255, 0.36);
+        margin-bottom: 15px;
+        input,
+        textarea {
+            margin-top: 5px;
+        }
+    }
+}
+
+.confirmBox {
+    grid-area: span 1 / span 2;
+    text-align: center;
+
+    h4 {
+        font-weight: bold;
+        font-size: 18px;
+        color: #a1d6fa;
+        padding: 30px 0 20px;
+    }
+    label {
+        vertical-align: middle;
+        font-size: 18px;
+        input {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+        }
+    }
+    .btnGroup {
+        padding-top: 34px;
+        button {
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 18px;
+            color: #fff;
+
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .save {
+            background: #42aff9;
+            padding: 14px 31px;
+        }
+        .cancel {
+            background: #f94263;
+            padding: 14px 50px;
+            margin-left: 18px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .accountProfileContainer {
+        grid-template: initial;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+    .accountAvatar,
+    .communicationDetail,
+    .accountDetail,
+    .homeAddress,
+    .confirmBox {
+        grid-area: unset;
+        margin-top: 0;
+        flex-direction: column;
+    }
+    .confirmBox .btnGroup .cancel {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
